@@ -1,0 +1,2 @@
+class OrganizationGlAccount < ApplicationRecord
+end

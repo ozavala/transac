@@ -1,0 +1,10 @@
+110 - Cash - Cash - Liquid money available
+120 - Banks - Bank - Bank Account
+121 - Banco Bolivariano - Bank - Checking Bank Account 986543
+122 - Banco Bolivariano - Bank - Saving Bank Account No. 898765
+500 - Expenses - Expense - Operational Expenses
+510 - Advertising expense - Expense - Cost of marketing expenses
+520 - Office Supplies expense - Expense - Office supplies expenses
+400 - Revenues - Revenue - Amounts due to different incomes
+410 - Membership Income - Revenue - Income obtained from membership sales
+420 - Advertising Income  - Revenue - Amounts of revenues accumulated for a period due to advertising sales

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  transaction_date: 2019-01-27
+  entry_date: 2019-01-27
+  description: MyString
+  amount: 1
+  transaction_type_code: MyString
+  to_party_id: 1
+  from_party_id: 1
+  from_org_party_id: 1
+
+two:
+  transaction_date: 2019-01-27
+  entry_date: 2019-01-27
+  description: MyString
+  amount: 1
+  transaction_type_code: MyString
+  to_party_id: 1
+  from_party_id: 1
+  from_org_party_id: 1
