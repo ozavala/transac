@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  detail_seq: 1
+  amount: 1
+  debit_credit_flag: MyString
+  party_id: 1
+  gl_account_id: 1
+  parent_transaction_id: 1
+  parent_detail_seq: 1
+
+two:
+  detail_seq: 1
+  amount: 1
+  debit_credit_flag: MyString
+  party_id: 1
+  gl_account_id: 1
+  parent_transaction_id: 1
+  parent_detail_seq: 1

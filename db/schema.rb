@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_27_192827) do
+ActiveRecord::Schema.define(version: 2019_01_28_193514) do
 
   create_table "accounting_transaction_types", force: :cascade do |t|
     t.string "transaction_type_code"
@@ -51,6 +51,18 @@ ActiveRecord::Schema.define(version: 2019_01_27_192827) do
     t.string "name"
     t.string "last_name"
     t.string "first_name"
+  end
+
+  create_table "transaction_details", force: :cascade do |t|
+    t.integer "detail_seq"
+    t.integer "amount"
+    t.string "debit_credit_flag"
+    t.integer "party_id"
+    t.integer "gl_account_id"
+    t.integer "parent_transaction_id"
+    t.integer "parent_detail_seq"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

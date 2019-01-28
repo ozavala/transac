@@ -1,5 +1,8 @@
 <h1>Pages#menu</h1>
 <p>Menu Options</p>
   <ul>
-    <li><a href="#">Create Chart<%PagesHelper::create_gl_chart_of_accounts%></a></li>
+    <li><a href="#">Create Chart of Accounts<%PagesHelper::create_gl_chart_of_accounts_report%></a></li>
+    <%=link_to 'Show Chart of Accounts',reports_gl_chart_of_accounts_path %>
+    <li><a href="#">Create Transactions Report<%PagesHelper::create_transactions_report%></a></li>
+    <%=link_to 'Show Transactions',reports_account_transactions_path %>
   </ul>
