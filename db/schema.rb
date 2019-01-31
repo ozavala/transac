@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_28_193514) do
+ActiveRecord::Schema.define(version: 2019_01_30_210935) do
 
   create_table "accounting_transaction_types", force: :cascade do |t|
     t.string "transaction_type_code"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_01_28_193514) do
     t.integer "party_id"
     t.date "from_date"
     t.date "to_date"
+    t.integer "gl_account_id"
   end
 
   create_table "parties", force: :cascade do |t|
