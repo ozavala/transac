@@ -63,3 +63,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'faker'
 gem 'awesome_print', '~> 1.8'
+gem 'money', '~> 6.13', '>= 6.13.1'

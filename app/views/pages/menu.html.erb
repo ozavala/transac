@@ -1,8 +1,18 @@
 <h1>Pages#menu</h1>
 <p>Menu Options</p>
-  <ul>
-    <li><a href="#">Create Chart of Accounts<%PagesHelper::create_gl_chart_of_accounts_report%></a></li>
-    <%=link_to 'Show Chart of Accounts',reports_gl_chart_of_accounts_path %>
-    <li><a href="#">Create Transactions Report<%PagesHelper::create_transactions_report%></a></li>
-    <%=link_to 'Show Transactions',reports_account_transactions_path %>
-  </ul>
+<table>
+  <tr>
+    <td><a href="#">Crear Tabla de Cuentas<%PagesHelper::create_gl_chart_of_accounts_report%></a>
+    </td>
+    <td><%=link_to 'Reporte de Cuentas',reports_gl_chart_of_accounts_path %>
+    </td>
+  </tr>
+    <tr>
+      <td><a href="#">Crear Reporte de Transacciones <%PagesHelper::create_transactions_report%></a></td>
+      <td><%=link_to 'Mostrar Transacciones',reports_account_transactions_path %></td>
+    </tr>
+    <tr>
+      <td><a href="#">Crear Balance de Ingresos <%PagesHelper::create_income_report%></a></td>
+      <td><%=link_to 'Mostrar Transacciones',reports_income_balance_path %></td>
+    </tr>
+</table>
