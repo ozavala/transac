@@ -1,3 +1,3 @@
 class OrganizationGlAccount < ApplicationRecord
-  has_many :general_ledger_accounts
+  belongs_to :general_ledger_account
 end

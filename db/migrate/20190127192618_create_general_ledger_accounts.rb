@@ -5,7 +5,7 @@ class CreateGeneralLedgerAccounts < ActiveRecord::Migration[5.2]
       t.index :account_code
       t.string :name, null: false
       t.string :description, null: false
-      t.string :acc_type_code, null: false
+      t.integer :gl_account_type_id, null: false
 
     end
 

@@ -1,3 +1,4 @@
 class GeneralLedgerAccount < ApplicationRecord
-  belongs_to :organization_gl_accounts
+  has_many :organization_gl_accounts
+  belongs_to :gl_account_type
 end

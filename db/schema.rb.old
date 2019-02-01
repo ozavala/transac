@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2019_01_30_210935) do
     t.string "account_code", null: false
     t.string "name", null: false
     t.string "description", null: false
-    t.integer "gl_account_type_id", null: false
+    t.string "acc_type_code", null: false
     t.index ["account_code"], name: "index_general_ledger_accounts_on_account_code"
   end
 
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2019_01_30_210935) do
     t.integer "party_id"
     t.date "from_date"
     t.date "to_date"
-    t.integer "general_ledger_account_id"
+    t.integer "gl_account_id"
   end
 
   create_table "parties", force: :cascade do |t|

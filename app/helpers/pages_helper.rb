@@ -11,7 +11,7 @@ module PagesHelper
         )
         glacs.each do |gla|
         chart_file.puts(
-        "<tr><td>#{gla.id}</td><td>#{gla.account_code}</td><td>#{gla.name}</td><td>#{gla.acc_type_code}</td> <td>#{gla.description}</td></tr>")
+        "<tr><td>#{gla.id}</td><td>#{gla.account_code}</td><td>#{gla.name}</td><td>#{gla.gl_account_type_id}</td> <td>#{gla.description}</td></tr>")
         end
     chart_file.puts('</table>')
     chart_file.close
@@ -22,28 +22,64 @@ module PagesHelper
     trans = AccountingTransaction.order(:id).all
     detrans = TransactionDetail.order(:parent_transaction_id)
       trans_file.puts(
-        '<div><h1>General Ledger Transactions </h1>')
-        trans_file.puts(
-          '<table><tr><th>ID</th><th>Entry Date</th><th>Description</th><th>Tran Type account_code</th><th>To Party</th><th>From Party</th><th>From Org Party</th></tr>'
-        )
-        trans.each do |tra|
-        trans_file.puts(
-        "<tr><td>#{tra.id}</td><td>#{tra.entry_date}</td><td>#{tra.description}</td><td>#{tra.transaction_type_code}</td> <td>#{tra.to_party_id}</td><td>#{tra.from_party_id}</td><td>#{tra.from_org_party_id}</td></tr>")
-        trans_file.puts(
-          )
-        detrans = TransactionDetail.where("parent_transaction_id = #{tra.id}")
+        '<div>
+        <h1>General Ledger Transactions </h1>')
 
+        trans.each do |tra|
           trans_file.puts(
-            '<table><h4>Transaction Detail</h4>
-             <tr><th>ID</th><th>Seq</th><th>Amount</th><th>Flag</th><th>Party ID</th><th>Gl Account ID</th><th>Parent ID</th><th>Parent Seq</th></tr>'
-          )
+            "<table>
+              <tr>
+                <th>ID</th>
+                <th>Entry Date</th>
+                <th>Description</th>
+                <th>Tran Type account_code</th>
+                <th>To Party</th>
+                <th>From Party</th>
+                <th>From Org Party</th>
+              </tr>")
+          trans_file.puts(
+              "<tr>
+                <td>#{tra.id}</td>
+                <td>#{tra.entry_date}</td>
+                <td>#{tra.description}</td>
+                <td>#{tra.transaction_type_code}</td>
+                <td>#{tra.to_party_id}</td>
+                <td>#{tra.from_party_id}</td>
+                <td>#{tra.from_org_party_id}</td>
+              </tr>
+            </table>")
+
+          detrans = TransactionDetail.where("parent_transaction_id = #{tra.id}")
+          trans_file.puts(
+            '<table>
+              <h4>Transaction Detail</h4>')
+              trans_file.puts(
+               "<tr>
+                 <th>ID</th>
+                 <th>Seq</th>
+                 <th>Amount</th>
+                 <th>Flag</th>
+                 <th>Party ID</th>
+                 <th>Gl Account ID</th>
+                 <th>Parent ID</th>
+                 <th>Parent Seq</th>
+               </tr>")
           detrans.each do |det|
-            trans_file.puts(
-            "<tr><td>#{det.id}</td><td>#{det.detail_seq}</td><td>#{det.amount}</td><td>#{det.debit_credit_flag}</td> <td>#{det.party_id}</td><td>#{det.gl_account_id}</td><td>#{det.parent_transaction_id}</td><td>#{det.parent_detail_seq}</td></tr>")
+              trans_file.puts(
+              "<tr>
+                <td>#{det.id}</td>
+                <td>#{det.detail_seq}</td>
+                <td>#{det.amount}</td>
+                <td>#{det.debit_credit_flag}</td>
+                <td>#{det.party_id}</td>
+                <td>#{det.gl_account_id}</td>
+                <td>#{det.parent_transaction_id}</td>
+                <td>#{det.parent_detail_seq}</td>
+              </tr>")
           end
+        trans_file.puts("</table><br>")
         end
-        trans_file.puts("</div></table></table>")
+        trans_file.puts("</div>")
     trans_file.close
   end
-
 end
